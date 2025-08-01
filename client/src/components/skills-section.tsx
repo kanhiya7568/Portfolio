@@ -80,7 +80,7 @@ export default function SkillsSection() {
             ref={ref}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Skills & Expertise</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <div className="w-24 h-1 bg-gray-600 mx-auto mb-8"></div>
           </motion.div>
           
           <motion.div 
@@ -93,22 +93,22 @@ export default function SkillsSection() {
               <motion.div 
                 key={index}
                 variants={cardVariants}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                className="bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className="flex items-center mb-6">
-                  <category.icon className="text-3xl text-blue-600 mr-4 h-8 w-8" />
-                  <h3 className="text-xl font-semibold text-gray-800">{category.title}</h3>
+                  <category.icon className="text-3xl text-gray-300 mr-4 h-8 w-8" />
+                  <h3 className="text-xl font-semibold text-gray-100">{category.title}</h3>
                 </div>
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
                       <div className="flex justify-between mb-2">
-                        <span className="text-gray-600">{skill.name}</span>
-                        <span className="text-gray-600">{skill.level}%</span>
+                        <span className="text-gray-300">{skill.name}</span>
+                        <span className="text-gray-300">{skill.level}%</span>
                       </div>
-                      <div className="bg-gray-200 rounded-full h-3">
+                      <div className="bg-gray-700 rounded-full h-3">
                         <motion.div 
-                          className="skill-bar bg-gradient-to-r from-blue-600 to-blue-400 h-3 rounded-full"
+                          className="skill-bar bg-gradient-to-r from-gray-500 to-gray-400 h-3 rounded-full"
                           initial={{ width: 0 }}
                           animate={animateSkills ? { width: `${skill.level}%` } : { width: 0 }}
                           transition={{ duration: 2, delay: skillIndex * 0.2 }}
@@ -133,7 +133,7 @@ export default function SkillsSection() {
               {powerSkills.map((skill, index) => (
                 <motion.span
                   key={index}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors duration-300 cursor-default"
+                  className="bg-gray-700 text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300 cursor-default"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}

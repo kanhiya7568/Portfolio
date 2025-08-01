@@ -110,7 +110,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 mountain-gradient text-white">
+    <section id="contact" className="py-20 bg-gray-800 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div 
@@ -121,7 +121,7 @@ export default function ContactSection() {
             ref={ref}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Connect</h2>
-            <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
+            <div className="w-24 h-1 bg-gray-600 mx-auto mb-8"></div>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto">
               Ready to collaborate on exciting projects or discuss opportunities? I'd love to hear from you!
             </p>

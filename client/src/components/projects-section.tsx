@@ -84,7 +84,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div 
@@ -94,8 +94,8 @@ export default function ProjectsSection() {
             transition={{ duration: 0.8 }}
             ref={ref}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Featured Projects</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-100 mb-6">Featured Projects</h2>
+            <div className="w-24 h-1 bg-gray-600 mx-auto mb-8"></div>
           </motion.div>
           
           <motion.div 
@@ -108,20 +108,20 @@ export default function ProjectsSection() {
               <motion.div 
                 key={index}
                 variants={cardVariants}
-                className={`bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${project.isLarge ? 'lg:col-span-2' : ''}`}
+                className={`bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${project.isLarge ? 'lg:col-span-2' : ''}`}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
-                  <project.icon className="text-4xl text-white h-16 w-16" />
+                <div className="h-48 bg-gray-800 flex items-center justify-center">
+                  <project.icon className="text-4xl text-gray-300 h-16 w-16" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-100 mb-3">{project.title}</h3>
+                  <p className="text-gray-300 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <Badge 
                         key={techIndex}
-                        className={`${project.badgeColor} px-3 py-1 rounded-full text-sm`}
+                        className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm"
                       >
                         {tech}
                       </Badge>
@@ -137,12 +137,12 @@ export default function ProjectsSection() {
                       <>
                         <Button 
                           variant="ghost"
-                          className="text-blue-600 hover:text-blue-800 font-medium p-0"
+                          className="text-gray-300 hover:text-white font-medium p-0"
                           onClick={() => window.open(project.link, '_blank')}
                         >
                           View Project <ExternalLink className="ml-1 h-4 w-4" />
                         </Button>
-                        <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
+                        <Button variant="ghost" size="icon" className="text-gray-400 hover:text-gray-200">
                           <Github className="h-5 w-5" />
                         </Button>
                       </>
@@ -150,11 +150,11 @@ export default function ProjectsSection() {
                       <>
                         <Button 
                           variant="ghost"
-                          className="text-blue-600 hover:text-blue-800 font-medium p-0"
+                          className="text-gray-300 hover:text-white font-medium p-0"
                         >
                           View Project <ExternalLink className="ml-1 h-4 w-4" />
                         </Button>
-                        <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
+                        <Button variant="ghost" size="icon" className="text-gray-400 hover:text-gray-200">
                           <Github className="h-5 w-5" />
                         </Button>
                       </>

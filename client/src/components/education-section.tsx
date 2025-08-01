@@ -261,7 +261,7 @@ export default function EducationSection() {
   };
 
   return (
-    <section id="education" className="py-20 bg-gray-50">
+    <section id="education" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div 

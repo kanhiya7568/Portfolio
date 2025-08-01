@@ -27,7 +27,7 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div 
@@ -37,8 +37,8 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             ref={ref}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">About Me</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-100 mb-6">About Me</h2>
+            <div className="w-24 h-1 bg-gray-600 mx-auto mb-8"></div>
           </motion.div>
           
           <motion.div 
@@ -48,28 +48,28 @@ export default function AboutSection() {
             animate={isInView ? "visible" : "hidden"}
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-6">AI-ML Enthusiast & Developer</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <h3 className="text-2xl font-semibold text-gray-100 mb-6">AI-ML Enthusiast & Developer</h3>
+              <p className="text-gray-300 leading-relaxed mb-6">
                 As a first-year computer science student specializing in artificial intelligence and machine learning, I am embarking on an exciting journey to explore the world of data science. My passion lies in understanding complex algorithms, harnessing the power of Python, and diving into the depths of deep learning.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-300 leading-relaxed mb-6">
                 With a curious mind and a commitment to continuous learning, I eagerly collaborate with fellow enthusiasts to create intelligent solutions that push the boundaries of what's possible.
               </p>
               
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center">
-                  <MapPin className="text-blue-600 mr-2 h-5 w-5" />
-                  <span className="text-gray-600">Bharatpur, Rajasthan</span>
+                  <MapPin className="text-gray-400 mr-2 h-5 w-5" />
+                  <span className="text-gray-300">Bharatpur, Rajasthan</span>
                 </div>
                 <div className="flex items-center">
-                  <GraduationCap className="text-blue-600 mr-2 h-5 w-5" />
-                  <span className="text-gray-600">B.Tech Computer Science</span>
+                  <GraduationCap className="text-gray-400 mr-2 h-5 w-5" />
+                  <span className="text-gray-300">B.Tech Computer Science</span>
                 </div>
               </div>
             </motion.div>
             
             <motion.div variants={itemVariants}>
-              <div className="mountain-gradient p-8 rounded-2xl text-white">
+              <div className="bg-gray-900 p-8 rounded-2xl text-white">
                 <h4 className="text-xl font-semibold mb-6">Quick Facts</h4>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">

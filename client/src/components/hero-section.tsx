@@ -80,12 +80,11 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <h1 className="text-5xl lg:text-6xl font-light text-gray-800 mb-6 leading-tight">
-              &lt;full stack&gt;<br />
-              <span className="font-normal">coder</span>
+              &lt;coder&gt;
             </h1>
             <div className="space-y-2 text-gray-600">
-              <p>Full stack developer who creates</p>
-              <p>modern, scalable and efficient</p>
+              <p>Developer who creates modern,</p>
+              <p>scalable and efficient</p>
               <p>web applications</p>
             </div>
             
@@ -122,6 +121,46 @@ export default function HeroSection() {
           </Button>
         </motion.div>
       </div>
+      
+      {/* Animated Robot */}
+      <motion.div
+        className="absolute top-20 right-20 w-16 h-16 z-20 hidden lg:block"
+        animate={{
+          y: [0, -20, 0],
+          x: [0, 10, -10, 0],
+          rotate: [0, 10, -10, 0]
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        <svg viewBox="0 0 64 64" className="w-full h-full text-gray-700">
+          <g fill="currentColor">
+            {/* Robot body */}
+            <rect x="18" y="24" width="28" height="32" rx="4" />
+            {/* Robot head */}
+            <rect x="22" y="12" width="20" height="16" rx="2" />
+            {/* Eyes */}
+            <circle cx="28" cy="18" r="2" fill="white" />
+            <circle cx="36" cy="18" r="2" fill="white" />
+            <circle cx="28" cy="18" r="1" fill="currentColor" />
+            <circle cx="36" cy="18" r="1" fill="currentColor" />
+            {/* Mouth */}
+            <rect x="30" y="22" width="4" height="2" rx="1" fill="white" />
+            {/* Arms */}
+            <rect x="12" y="28" width="6" height="16" rx="3" />
+            <rect x="46" y="28" width="6" height="16" rx="3" />
+            {/* Legs */}
+            <rect x="22" y="56" width="6" height="6" rx="1" />
+            <rect x="36" y="56" width="6" height="6" rx="1" />
+            {/* Antenna */}
+            <line x1="32" y1="12" x2="32" y2="8" stroke="currentColor" strokeWidth="2" />
+            <circle cx="32" cy="8" r="2" fill="white" />
+          </g>
+        </svg>
+      </motion.div>
       
       {/* Scroll Indicator */}
       <motion.div 
