@@ -1,0 +1,148 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { ExternalLink, Github, ShoppingCart, UserCheck, Leaf, Brain, Plus, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
+export default function ProjectsSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const projects = [
+    {
+      title: "UNIMART - E-Commerce Platform",
+      description: "A comprehensive e-commerce web application with modern UI, product management, and shopping cart functionality.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      icon: ShoppingCart,
+      gradient: "from-blue-500 to-purple-600",
+      badgeColor: "bg-blue-100 text-blue-800"
+    },
+    {
+      title: "Medical Appointment System",
+      description: "A streamlined platform for booking medical appointments with doctors, featuring calendar integration and patient management.",
+      technologies: ["HTML", "CSS", "Java"],
+      icon: UserCheck,
+      gradient: "from-green-500 to-teal-600",
+      badgeColor: "bg-green-100 text-green-800"
+    },
+    {
+      title: "Ecosystem Protection",
+      description: "An educational website promoting environmental awareness and showcasing ecosystem protection initiatives.",
+      technologies: ["HTML", "CSS"],
+      icon: Leaf,
+      gradient: "from-green-600 to-emerald-700",
+      badgeColor: "bg-green-100 text-green-800"
+    },
+    {
+      title: "AI-Enhanced System Call Optimization",
+      description: "An advanced AI system that optimizes system calls using machine learning algorithms to improve performance and efficiency.",
+      technologies: ["Python", "Machine Learning", "System Optimization"],
+      icon: Brain,
+      gradient: "from-purple-600 to-indigo-700",
+      badgeColor: "bg-purple-100 text-purple-800",
+      isLarge: true
+    },
+    {
+      title: "More Projects Coming Soon",
+      description: "Stay tuned for more exciting projects showcasing the latest technologies and innovative solutions.",
+      technologies: ["React", "Node.js", "AI/ML"],
+      icon: Plus,
+      gradient: "from-gray-400 to-gray-600",
+      badgeColor: "bg-gray-100 text-gray-800",
+      isComingSoon: true
+    }
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
+  return (
+    <section id="projects" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8 }}
+            ref={ref}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Featured Projects</h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+          </motion.div>
+          
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
+            {projects.map((project, index) => (
+              <motion.div 
+                key={index}
+                variants={cardVariants}
+                className={`bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${project.isLarge ? 'lg:col-span-2' : ''}`}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
+                  <project.icon className="text-4xl text-white h-16 w-16" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge 
+                        key={techIndex}
+                        className={`${project.badgeColor} px-3 py-1 rounded-full text-sm`}
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="flex justify-between items-center">
+                    {project.isComingSoon ? (
+                      <>
+                        <span className="text-gray-400 font-medium">Coming Soon</span>
+                        <Clock className="text-gray-400 h-5 w-5" />
+                      </>
+                    ) : (
+                      <>
+                        <Button 
+                          variant="ghost"
+                          className="text-blue-600 hover:text-blue-800 font-medium p-0"
+                        >
+                          View Project <ExternalLink className="ml-1 h-4 w-4" />
+                        </Button>
+                        <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
+                          <Github className="h-5 w-5" />
+                        </Button>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
