@@ -78,7 +78,7 @@ export default function HeroSection() {
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
                 <motion.button
-                  className="w-6 h-6 bg-gray-700 rounded-full border-2 border-gray-600 hover:bg-gray-600 transition-colors duration-300 relative"
+                  className="w-3 h-3 bg-gray-700 rounded-full border border-gray-600 hover:bg-gray-600 transition-colors duration-300 relative"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -92,11 +92,11 @@ export default function HeroSection() {
                   animate={{ opacity: 0, y: 10, scale: 0 }}
                   id="secret-name"
                 >
-                  <div className="bg-gray-800 text-white px-4 py-2 rounded-lg text-base font-semibold shadow-xl border border-gray-600"
+                  <div className="bg-gray-800 text-white px-2 py-1 rounded text-xs font-semibold shadow-lg border border-gray-600"
                        style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
                     Kanhiya Solanki
                   </div>
-                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45 border-r border-b border-gray-600"></div>
+                  <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-gray-800 rotate-45 border-r border-b border-gray-600"></div>
                 </motion.div>
               </motion.div>
             </div>
