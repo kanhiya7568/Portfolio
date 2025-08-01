@@ -50,7 +50,7 @@ export default function AboutSection() {
             <motion.div variants={itemVariants}>
               <h3 className="text-2xl font-semibold text-gray-100 mb-6">AI-ML Enthusiast & Developer</h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                As a first-year computer science student specializing in artificial intelligence and machine learning, I am embarking on an exciting journey to explore the world of data science. My passion lies in understanding complex algorithms, harnessing the power of Python, and diving into the depths of deep learning.
+                As a 3rd-year computer science student specializing in artificial intelligence and machine learning, I am passionate about exploring the world of data science. My expertise lies in understanding complex algorithms, harnessing the power of Python, and diving into the depths of deep learning.
               </p>
               <p className="text-gray-300 leading-relaxed mb-6">
                 With a curious mind and a commitment to continuous learning, I eagerly collaborate with fellow enthusiasts to create intelligent solutions that push the boundaries of what's possible.

@@ -23,7 +23,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-semibold mb-4">Kanhiya Solanki</h3>
+            <h3 className="text-2xl font-semibold mb-4" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>Kanhiya Solanki</h3>
             <p className="text-gray-400 mb-8">AI-ML Enthusiast & Full Stack Developer</p>
             
             <div className="flex justify-center space-x-6 mb-8">

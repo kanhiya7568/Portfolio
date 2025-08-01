@@ -99,7 +99,7 @@ export default function ProjectsSection() {
           </motion.div>
           
           <motion.div 
-            className="space-y-8"
+            className="space-y-8 w-full"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -140,7 +140,7 @@ export default function ProjectsSection() {
             </motion.div>
 
             {/* Other Projects Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
             {projects.filter((_, index) => index !== 0).map((project, index) => (
               <motion.div 
                 key={index}
