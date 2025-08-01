@@ -34,11 +34,13 @@ export default function Navigation() {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-effect bg-black/80' : 'glass-effect'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-white font-bold text-2xl bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent border-2 border-white rounded-full w-12 h-12 flex items-center justify-center">
-            KS
+          <div className={`font-bold text-2xl transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-gray-800'}`}>
+            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm font-bold">
+              KS
+            </div>
           </div>
           
           {/* Desktop Navigation */}
@@ -47,7 +49,7 @@ export default function Navigation() {
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer"
+                className={`transition-colors duration-300 cursor-pointer font-medium ${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-gray-700 hover:text-gray-900'}`}
               >
                 {item.label}
               </button>
@@ -58,7 +60,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-white">
+                <Button variant="ghost" size="icon" className={`${isScrolled ? 'text-gray-700' : 'text-gray-700'}`}>
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>

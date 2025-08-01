@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import portraitImage from "@assets/iphone_1754042573286.png";
-import backgroundImage from "@assets/manali1_1754042878473.jpg";
 
 export default function HeroSection() {
   const handleScrollToContact = () => {
@@ -16,84 +15,112 @@ export default function HeroSection() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
-        backgroundSize: 'contain',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundColor: '#1a1a1a'
-      }}
+      className="relative min-h-screen flex items-center justify-center bg-gray-50"
     >
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-16">
-          {/* Left Content */}
+        <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
+          
+          {/* Left Side - AI-ML Developer */}
           <motion.div 
-            className="lg:w-1/2 text-center lg:text-left"
+            className="lg:w-1/3 text-left mb-8 lg:mb-0"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            >
-              <h1 className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
-                Hello.. I am
-              </h1>
-              <h2 className="text-6xl md:text-8xl font-bold mb-6 leading-tight text-white">
-                <span className="text-gray-200">Kanhiya</span><br />
-                <span className="text-gray-300">Solanki</span>
-              </h2>
-              <p className="text-xl md:text-2xl text-gray-400 mb-8 font-light">
-                AI-ML Enthusiast & Full Stack Developer
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button 
-                  onClick={handleScrollToContact}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Get In Touch
-                </Button>
-                <Button 
-                  variant="outline"
-                  onClick={handleScrollToProjects}
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 bg-transparent"
-                >
-                  View My Work
-                </Button>
-              </div>
-            </motion.div>
+            <h1 className="text-5xl lg:text-6xl font-light text-gray-800 mb-6 leading-tight">
+              ai-ml<br />
+              <span className="font-normal">developer</span>
+            </h1>
+            <div className="space-y-2 text-gray-600">
+              <p>AI enthusiast specializing in</p>
+              <p>machine learning and intelligent</p>
+              <p>system development</p>
+            </div>
+            
+            {/* Code snippet decorations */}
+            <div className="mt-8 space-y-1 text-xs text-gray-400 font-mono">
+              <p>&lt;brain&gt;</p>
+              <p className="pl-4">neural_networks();</p>
+              <p className="pl-4">deep_learning();</p>
+              <p>&lt;/brain&gt;</p>
+            </div>
           </motion.div>
           
-          {/* Right Content - Profile Image */}
+          {/* Center - Profile Image */}
           <motion.div 
-            className="lg:w-1/2 flex justify-center lg:justify-end"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="lg:w-1/3 flex justify-center mb-8 lg:mb-0"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              className="relative"
-            >
-              <div className="w-96 h-96 md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-4 border-white shadow-2xl">
+            <div className="relative">
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl">
                 <img 
                   src={portraitImage} 
                   alt="Kanhiya Solanki" 
-                  className="w-full h-full object-cover object-center scale-110"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
-              <motion.div 
-                className="absolute -bottom-4 -right-4 bg-green-500 w-8 h-8 rounded-full border-4 border-white"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-              />
-            </motion.div>
+              
+              {/* Artistic paint strokes overlay */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-4 left-4 w-20 h-16 bg-gradient-to-br from-blue-400/30 to-cyan-400/30 rounded-full blur-sm"></div>
+                <div className="absolute top-12 right-8 w-16 h-20 bg-gradient-to-br from-yellow-400/40 to-orange-400/40 rounded-full blur-sm"></div>
+                <div className="absolute bottom-16 left-8 w-24 h-12 bg-gradient-to-br from-purple-400/30 to-pink-400/30 rounded-full blur-sm"></div>
+                <div className="absolute bottom-8 right-4 w-12 h-16 bg-gradient-to-br from-green-400/30 to-emerald-400/30 rounded-full blur-sm"></div>
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Right Side - Full Stack Coder */}
+          <motion.div 
+            className="lg:w-1/3 text-right"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h1 className="text-5xl lg:text-6xl font-light text-gray-800 mb-6 leading-tight">
+              &lt;full stack&gt;<br />
+              <span className="font-normal">coder</span>
+            </h1>
+            <div className="space-y-2 text-gray-600">
+              <p>Full stack developer who creates</p>
+              <p>modern, scalable and efficient</p>
+              <p>web applications</p>
+            </div>
+            
+            {/* Tech stack decorations */}
+            <div className="mt-8 space-y-1 text-xs text-gray-400 font-mono">
+              <p className="text-right">React.js</p>
+              <p className="text-right">Node.js</p>
+              <p className="text-right">Python</p>
+              <p className="text-right">JavaScript</p>
+              <p className="text-right">TypeScript</p>
+            </div>
           </motion.div>
         </div>
+        
+        {/* Action Buttons */}
+        <motion.div 
+          className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <Button 
+            onClick={handleScrollToContact}
+            className="bg-gray-800 text-white px-8 py-4 rounded-full font-medium hover:bg-gray-900 transition-all duration-300 transform hover:scale-105"
+          >
+            Get In Touch
+          </Button>
+          <Button 
+            variant="outline"
+            onClick={handleScrollToProjects}
+            className="border-2 border-gray-800 text-gray-800 px-8 py-4 rounded-full font-medium hover:bg-gray-800 hover:text-white transition-all duration-300 transform hover:scale-105"
+          >
+            View My Work
+          </Button>
+        </motion.div>
       </div>
       
       {/* Scroll Indicator */}
@@ -102,7 +129,7 @@ export default function HeroSection() {
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
       >
-        <ChevronDown className="text-white text-2xl" />
+        <ChevronDown className="text-gray-600 text-2xl" />
       </motion.div>
     </section>
   );
