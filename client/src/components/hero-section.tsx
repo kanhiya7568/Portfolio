@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import portraitImage from "@assets/iphone_1754042573286.png";
+import backgroundImage from "@assets/manali1_1754042878473.jpg";
 
 export default function HeroSection() {
   const handleScrollToContact = () => {
@@ -13,12 +14,21 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center mountain-bg">
+    <section 
+      id="home" 
+      className="relative min-h-screen flex items-center justify-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-16">
           {/* Left Content */}
           <motion.div 
-            className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0"
+            className="lg:w-1/2 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -37,24 +47,24 @@ export default function HeroSection() {
                   👋
                 </motion.span> Hello.. I am
               </h1>
-              <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                <span className="text-gradient">Kanhiya</span><br />
-                <span className="text-white">Solanki</span>
+              <h2 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Kanhiya</span><br />
+                <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Solanki</span>
               </h2>
-              <p className="text-xl md:text-2xl text-blue-100 mb-8 font-light">
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 font-light">
                 AI-ML Enthusiast & Full Stack Developer
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
                   onClick={handleScrollToContact}
-                  className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   Get In Touch
                 </Button>
                 <Button 
                   variant="outline"
                   onClick={handleScrollToProjects}
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105 bg-transparent"
+                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 bg-transparent"
                 >
                   View My Work
                 </Button>
@@ -74,11 +84,11 @@ export default function HeroSection() {
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               className="relative"
             >
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+              <div className="w-96 h-96 md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <img 
                   src={portraitImage} 
                   alt="Kanhiya Solanki" 
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center scale-110"
                 />
               </div>
               <motion.div 

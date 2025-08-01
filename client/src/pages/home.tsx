@@ -28,7 +28,7 @@ export default function Home() {
             
             <div className="flex justify-center space-x-6 mb-8">
               <a 
-                href="https://github.com/krishna054533" 
+                href="https://github.com/kanhiya7568" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -38,7 +38,7 @@ export default function Home() {
                 </svg>
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/kanhiya-singh-330629358" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"

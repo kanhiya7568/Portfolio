@@ -37,8 +37,8 @@ export default function Navigation() {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-effect bg-black/80' : 'glass-effect'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-white font-semibold text-xl">
-            Kanhiya Solanki
+          <div className="text-white font-bold text-2xl bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent border-2 border-white rounded-full w-12 h-12 flex items-center justify-center">
+            KS
           </div>
           
           {/* Desktop Navigation */}

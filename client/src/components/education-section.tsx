@@ -33,10 +33,51 @@ export default function EducationSection() {
   const certifications = [
     {
       title: "Google Certified: Foundation of Project Management",
-      icon: "fab fa-google",
+      company: "Google Certification",
       description: "Comprehensive training in project management principles and methodologies",
       status: "Certified",
-      color: "blue"
+      color: "blue",
+      link: "https://simpli-web.app.link/e/T5cLJKootVb"
+    },
+    {
+      title: "PMP Basics Certification",
+      company: "Professional Training",  
+      description: "Foundation level training in Project Management Professional practices",
+      status: "Certified",
+      color: "green",
+      link: "https://simpli-web.app.link/e/T5cLJKootVb"
+    },
+    {
+      title: "Data Structures & Algorithms using C++",
+      company: "CipherSchools | Aug'24 – Nov'24",
+      description: "Advanced training in DSA concepts using C++ programming language",
+      status: "Completed",
+      color: "purple",
+      link: "https://www.cipherschools.com/certificate/preview?id=67641cd1c8147ce0ed61228f"
+    },
+    {
+      title: "CyberSec Symposium 2.0 Participation",
+      company: "LPU | North India's Largest Cyber Security Conference",
+      description: "Participated in 3-day cybersecurity conference focusing on latest security trends",
+      status: "Completed",
+      color: "blue",
+      link: "https://www.linkedin.com/posts/kanhiya-singh-330629358_cybersecurity-lpu-techconference-activity-7356266430331293696-vzcM"
+    },
+    {
+      title: "Community Service - Brijwasi Yuva Samaj",
+      company: "Social Work & Environmental Initiative",
+      description: "Active participation in 'Swachh and Harit Braj' mission focusing on tree plantation and pollution control",
+      status: "Ongoing",
+      color: "green",
+      link: "https://www.linkedin.com/posts/kanhiya-singh-330629358_communityimpact-socialgood-volunteermemories-activity-7356265771095756801-7KrL"
+    },
+    {
+      title: "ONE INDIA - ONE WORLD 2025 Theatre",
+      company: "Lovely Professional University",
+      description: "Certificate of Recognition for theatre performance as Dance Participant and Minister role",
+      status: "Completed",
+      color: "blue",
+      link: "https://www.linkedin.com/posts/kanhiya-singh-330629358_lpu-theatreperformance-oneindia-activity-7356262806133841921-J8Qi"
     },
     {
       title: "Full Stack Web Development Intern",
@@ -44,13 +85,6 @@ export default function EducationSection() {
       description: "Worked on web applications using HTML, CSS, JavaScript, Node.js and AWS services",
       status: "Completed",
       color: "purple"
-    },
-    {
-      title: "Data Structures & Algorithms",
-      company: "Online Certification Program",
-      description: "Advanced training in DSA concepts and problem-solving techniques",
-      status: "In Progress",
-      color: "gray"
     }
   ];
 
@@ -147,9 +181,9 @@ export default function EducationSection() {
             >
               <h3 className="text-2xl font-semibold text-gray-800 mb-8 flex items-center">
                 <Award className="mr-3 h-6 w-6 text-blue-600" />
-                Certifications
+                Certifications & Achievements
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-6 max-h-96 overflow-y-auto pr-2">
                 {certifications.map((cert, index) => (
                   <motion.div 
                     key={index}
@@ -158,19 +192,37 @@ export default function EducationSection() {
                   >
                     <div className="flex items-start">
                       <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                        {index === 0 && <Award className="text-blue-600 text-xl h-6 w-6" />}
-                        {index === 1 && <Briefcase className="text-purple-600 text-xl h-6 w-6" />}
-                        {index === 2 && <GraduationCap className="text-gray-600 text-xl h-6 w-6" />}
+                        <Award className={`text-xl h-6 w-6 ${
+                          cert.color === 'blue' ? 'text-blue-600' : 
+                          cert.color === 'purple' ? 'text-purple-600' :
+                          cert.color === 'green' ? 'text-green-600' : 'text-gray-600'
+                        }`} />
                       </div>
                       <div className="flex-grow">
-                        <h4 className="font-semibold text-gray-800 mb-2">{cert.title}</h4>
-                        {cert.company && (
-                          <p className="text-blue-600 font-medium mb-2">{cert.company}</p>
-                        )}
-                        <p className="text-gray-600 text-sm mb-2">{cert.description}</p>
-                        <Badge className={`${getBadgeColor(cert.color)} px-3 py-1 rounded-full text-xs font-medium`}>
-                          {cert.status}
-                        </Badge>
+                        <div className="flex items-start justify-between">
+                          <div className="flex-grow">
+                            <h4 className="font-semibold text-gray-800 mb-2">{cert.title}</h4>
+                            {cert.company && (
+                              <p className="text-blue-600 font-medium mb-2">{cert.company}</p>
+                            )}
+                            <p className="text-gray-600 text-sm mb-2">{cert.description}</p>
+                            <Badge className={`${getBadgeColor(cert.color)} px-3 py-1 rounded-full text-xs font-medium`}>
+                              {cert.status}
+                            </Badge>
+                          </div>
+                          {cert.link && (
+                            <a 
+                              href={cert.link} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="ml-4 text-blue-600 hover:text-blue-800 transition-colors duration-300"
+                            >
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </motion.div>

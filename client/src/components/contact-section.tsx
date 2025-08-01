@@ -27,15 +27,33 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: "", email: "", message: "" });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly at kanhiyas135@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const contactInfo = [
@@ -62,12 +80,12 @@ export default function ContactSection() {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/krishna054533",
+      href: "https://github.com/kanhiya7568",
       label: "GitHub"
     },
     {
       icon: Linkedin,
-      href: "#",
+      href: "https://www.linkedin.com/in/kanhiya-singh-330629358",
       label: "LinkedIn"
     }
   ];
