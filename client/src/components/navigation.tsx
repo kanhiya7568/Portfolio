@@ -49,7 +49,7 @@ export default function Navigation() {
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className={`transition-colors duration-300 cursor-pointer font-medium ${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-gray-700 hover:text-gray-900'}`}
+                className={`transition-all duration-300 cursor-pointer font-medium px-4 py-2 rounded-lg shadow-md hover:shadow-lg ${isScrolled ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`}
               >
                 {item.label}
               </button>

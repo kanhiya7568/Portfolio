@@ -271,8 +271,8 @@ export default function EducationSection() {
             transition={{ duration: 0.8 }}
             ref={ref}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Education & Certifications</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-100 mb-6">Education & Certifications</h2>
+            <div className="w-24 h-1 bg-gray-600 mx-auto mb-8"></div>
           </motion.div>
           
           <div className="grid lg:grid-cols-2 gap-12">
@@ -282,8 +282,8 @@ export default function EducationSection() {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              <h3 className="text-2xl font-semibold text-gray-800 mb-8 flex items-center">
-                <GraduationCap className="mr-3 h-6 w-6 text-blue-600" />
+              <h3 className="text-2xl font-semibold text-gray-100 mb-8 flex items-center">
+                <GraduationCap className="mr-3 h-6 w-6 text-gray-400" />
                 Education
               </h3>
               <div className="space-y-8">
@@ -295,12 +295,12 @@ export default function EducationSection() {
                   >
                     <div className={`flex-shrink-0 w-4 h-4 rounded-full mt-2 mr-4 ${getStatusColor(item.status)}`}></div>
                     <div className="flex-grow">
-                      <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="font-semibold text-gray-800 mb-2">{item.title}</h4>
-                        <p className="text-blue-600 font-medium mb-2">{item.institution}</p>
-                        <p className="text-gray-600 text-sm mb-2">{item.duration}</p>
+                      <div className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h4 className="font-semibold text-gray-100 mb-2">{item.title}</h4>
+                        <p className="text-gray-300 font-medium mb-2">{item.institution}</p>
+                        <p className="text-gray-400 text-sm mb-2">{item.duration}</p>
                         {item.description && (
-                          <p className="text-gray-600 mt-2">{item.description}</p>
+                          <p className="text-gray-300 mt-2">{item.description}</p>
                         )}
                       </div>
                     </div>
@@ -315,8 +315,8 @@ export default function EducationSection() {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              <h3 className="text-2xl font-semibold text-gray-800 mb-8 flex items-center">
-                <Award className="mr-3 h-6 w-6 text-blue-600" />
+              <h3 className="text-2xl font-semibold text-gray-100 mb-8 flex items-center">
+                <Award className="mr-3 h-6 w-6 text-gray-400" />
                 Certifications & Achievements
               </h3>
               <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-gray-100">
@@ -324,10 +324,10 @@ export default function EducationSection() {
                   <motion.div 
                     key={index}
                     variants={itemVariants}
-                    className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                    className="bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                   >
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mr-4">
                         <Award className={`text-xl h-6 w-6 ${
                           cert.color === 'blue' ? 'text-blue-600' : 
                           cert.color === 'purple' ? 'text-purple-600' :
@@ -337,11 +337,11 @@ export default function EducationSection() {
                       <div className="flex-grow">
                         <div className="flex items-start justify-between">
                           <div className="flex-grow">
-                            <h4 className="font-semibold text-gray-800 mb-2">{cert.title}</h4>
+                            <h4 className="font-semibold text-gray-100 mb-2">{cert.title}</h4>
                             {cert.company && (
-                              <p className="text-blue-600 font-medium mb-2">{cert.company}</p>
+                              <p className="text-gray-300 font-medium mb-2">{cert.company}</p>
                             )}
-                            <p className="text-gray-600 text-sm mb-2">{cert.description}</p>
+                            <p className="text-gray-400 text-sm mb-2">{cert.description}</p>
                             <Badge className={`${getBadgeColor(cert.color)} px-3 py-1 rounded-full text-xs font-medium`}>
                               {cert.status}
                             </Badge>

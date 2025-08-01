@@ -124,42 +124,51 @@ export default function HeroSection() {
       
       {/* Animated Robot */}
       <motion.div
-        className="absolute top-20 right-20 w-16 h-16 z-20 hidden lg:block"
+        className="absolute w-20 h-20 z-20 hidden lg:block"
         animate={{
-          y: [0, -20, 0],
-          x: [0, 10, -10, 0],
-          rotate: [0, 10, -10, 0]
+          x: [50, 800, 100, 700, 80],
+          y: [100, 200, 150, 300, 120],
+          rotate: [0, 360, 180, -180, 0],
+          scale: [1, 1.2, 0.8, 1.1, 1]
         }}
         transition={{
-          duration: 3,
+          duration: 8,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: "easeInOut",
+          times: [0, 0.25, 0.5, 0.75, 1]
         }}
       >
-        <svg viewBox="0 0 64 64" className="w-full h-full text-gray-700">
-          <g fill="currentColor">
-            {/* Robot body */}
-            <rect x="18" y="24" width="28" height="32" rx="4" />
-            {/* Robot head */}
-            <rect x="22" y="12" width="20" height="16" rx="2" />
-            {/* Eyes */}
-            <circle cx="28" cy="18" r="2" fill="white" />
-            <circle cx="36" cy="18" r="2" fill="white" />
-            <circle cx="28" cy="18" r="1" fill="currentColor" />
-            <circle cx="36" cy="18" r="1" fill="currentColor" />
-            {/* Mouth */}
-            <rect x="30" y="22" width="4" height="2" rx="1" fill="white" />
-            {/* Arms */}
-            <rect x="12" y="28" width="6" height="16" rx="3" />
-            <rect x="46" y="28" width="6" height="16" rx="3" />
-            {/* Legs */}
-            <rect x="22" y="56" width="6" height="6" rx="1" />
-            <rect x="36" y="56" width="6" height="6" rx="1" />
-            {/* Antenna */}
-            <line x1="32" y1="12" x2="32" y2="8" stroke="currentColor" strokeWidth="2" />
-            <circle cx="32" cy="8" r="2" fill="white" />
-          </g>
-        </svg>
+        {/* Robot with reflection */}
+        <div className="relative">
+          {/* Main Robot */}
+          <svg viewBox="0 0 64 64" className="w-full h-full text-gray-700 drop-shadow-lg">
+            <g fill="currentColor">
+              {/* Robot body */}
+              <rect x="18" y="24" width="28" height="32" rx="4" />
+              {/* Robot head */}
+              <rect x="22" y="12" width="20" height="16" rx="2" />
+              {/* Eyes */}
+              <circle cx="28" cy="18" r="2" fill="white" />
+              <circle cx="36" cy="18" r="2" fill="white" />
+              <circle cx="28" cy="18" r="1" fill="currentColor" />
+              <circle cx="36" cy="18" r="1" fill="currentColor" />
+              {/* Mouth */}
+              <rect x="30" y="22" width="4" height="2" rx="1" fill="white" />
+              {/* Arms */}
+              <rect x="12" y="28" width="6" height="16" rx="3" />
+              <rect x="46" y="28" width="6" height="16" rx="3" />
+              {/* Legs */}
+              <rect x="22" y="56" width="6" height="6" rx="1" />
+              <rect x="36" y="56" width="6" height="6" rx="1" />
+              {/* Antenna */}
+              <line x1="32" y1="12" x2="32" y2="8" stroke="currentColor" strokeWidth="2" />
+              <circle cx="32" cy="8" r="2" fill="white" />
+            </g>
+          </svg>
+          
+          {/* Robot Shadow/Reflection */}
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-8 h-2 bg-gray-400 rounded-full opacity-40 blur-sm"></div>
+        </div>
       </motion.div>
       
       {/* Scroll Indicator */}

@@ -99,12 +99,49 @@ export default function ProjectsSection() {
           </motion.div>
           
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="space-y-8"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            {projects.map((project, index) => (
+            {/* Highlighted Ayurveda AI Project */}
+            <motion.div 
+              variants={cardVariants}
+              className="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-600 col-span-full"
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center relative">
+                <div className="absolute top-4 right-4 bg-yellow-500 text-black text-xs px-3 py-1 rounded-full font-bold">
+                  FEATURED
+                </div>
+                <svg className="text-6xl text-gray-300 h-20 w-20" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                </svg>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-100 mb-4">Ayurveda AI Consultation</h3>
+                <p className="text-gray-300 mb-6 text-lg">
+                  AI-powered Ayurvedic consultation system that provides personalized health recommendations based on ancient Ayurvedic principles combined with modern machine learning algorithms.
+                </p>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <span className="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">AI/ML</span>
+                  <span className="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">Python</span>
+                  <span className="bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">Healthcare</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <button 
+                    onClick={() => window.open('https://www.linkedin.com/in/kanhiya-singh-330629358', '_blank')}
+                    className="bg-gray-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-500 transition-all duration-300 transform hover:scale-105"
+                  >
+                    View on LinkedIn →
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Other Projects Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.filter((_, index) => index !== 0).map((project, index) => (
               <motion.div 
                 key={index}
                 variants={cardVariants}
@@ -163,6 +200,7 @@ export default function ProjectsSection() {
                 </div>
               </motion.div>
             ))}
+            </div>
           </motion.div>
         </div>
       </div>

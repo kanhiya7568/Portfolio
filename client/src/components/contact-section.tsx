@@ -122,9 +122,16 @@ export default function ContactSection() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Connect</h2>
             <div className="w-24 h-1 bg-gray-600 mx-auto mb-8"></div>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Ready to collaborate on exciting projects or discuss opportunities? I'd love to hear from you!
             </p>
+            <div className="flex justify-center mt-8">
+              <div className="flex space-x-4">
+                <div className="w-3 h-3 bg-gray-600 rounded-full animate-bounce"></div>
+                <div className="w-3 h-3 bg-gray-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                <div className="w-3 h-3 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+              </div>
+            </div>
           </motion.div>
           
           <motion.div 
@@ -134,13 +141,14 @@ export default function ContactSection() {
             animate={isInView ? "visible" : "hidden"}
           >
             {/* Contact Info */}
-            <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-semibold mb-8">Get In Touch</h3>
+            <motion.div variants={itemVariants} className="relative">
+              <div className="absolute -top-4 -left-4 w-32 h-32 bg-gradient-to-br from-gray-600/20 to-gray-700/20 rounded-full blur-xl"></div>
+              <h3 className="text-2xl font-semibold mb-8 relative z-10">Get In Touch</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="flex-shrink-0 w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
-                      <info.icon className="text-xl h-6 w-6" />
+                  <div key={index} className="flex items-center group hover:transform hover:scale-105 transition-all duration-300">
+                    <div className="flex-shrink-0 w-12 h-12 bg-gray-700 bg-opacity-80 rounded-lg flex items-center justify-center mr-4 group-hover:bg-gray-600 transition-colors duration-300">
+                      <info.icon className="text-xl h-6 w-6 text-gray-300 group-hover:text-white" />
                     </div>
                     <div>
                       {info.href ? (
@@ -166,7 +174,7 @@ export default function ContactSection() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center hover:bg-opacity-30 transition-all duration-300"
+                      className="w-12 h-12 bg-gray-700 bg-opacity-80 rounded-lg flex items-center justify-center hover:bg-gray-600 transition-all duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -178,8 +186,10 @@ export default function ContactSection() {
             </motion.div>
             
             {/* Contact Form */}
-            <motion.div variants={itemVariants}>
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <motion.div variants={itemVariants} className="relative">
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-gray-500/20 to-gray-600/20 rounded-full blur-lg"></div>
+              <h3 className="text-2xl font-semibold mb-8 relative z-10">Send a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
                   <Input
@@ -188,7 +198,7 @@ export default function ContactSection() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white bg-opacity-20 rounded-lg border border-white border-opacity-30 text-white placeholder-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                    className="w-full px-4 py-3 bg-gray-700 bg-opacity-80 rounded-lg border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300"
                     placeholder="Your Name"
                     required
                   />
@@ -202,7 +212,7 @@ export default function ContactSection() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white bg-opacity-20 rounded-lg border border-white border-opacity-30 text-white placeholder-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                    className="w-full px-4 py-3 bg-gray-700 bg-opacity-80 rounded-lg border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300"
                     placeholder="your.email@example.com"
                     required
                   />
@@ -216,7 +226,7 @@ export default function ContactSection() {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={5}
-                    className="w-full px-4 py-3 bg-white bg-opacity-20 rounded-lg border border-white border-opacity-30 text-white placeholder-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 resize-none"
+                    className="w-full px-4 py-3 bg-gray-700 bg-opacity-80 rounded-lg border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 resize-none transition-all duration-300"
                     placeholder="Your message here..."
                     required
                   />
@@ -225,7 +235,7 @@ export default function ContactSection() {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gray-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-500 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 h-4 w-4" />
