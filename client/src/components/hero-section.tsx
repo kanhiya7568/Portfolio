@@ -19,9 +19,10 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
-        backgroundSize: 'cover',
+        backgroundSize: 'contain',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#1a1a1a'
       }}
     >
       <div className="container mx-auto px-4 relative z-10">
@@ -38,20 +39,14 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <h1 className="text-2xl md:text-3xl text-white mb-4 font-light">
-                <motion.span 
-                  className="inline-block"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 2 }}
-                >
-                  👋
-                </motion.span> Hello.. I am
+              <h1 className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
+                Hello.. I am
               </h1>
-              <h2 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Kanhiya</span><br />
-                <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Solanki</span>
+              <h2 className="text-6xl md:text-8xl font-bold mb-6 leading-tight text-white">
+                <span className="text-gray-200">Kanhiya</span><br />
+                <span className="text-gray-300">Solanki</span>
               </h2>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 font-light">
+              <p className="text-xl md:text-2xl text-gray-400 mb-8 font-light">
                 AI-ML Enthusiast & Full Stack Developer
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

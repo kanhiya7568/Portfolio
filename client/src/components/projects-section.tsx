@@ -35,6 +35,16 @@ export default function ProjectsSection() {
       badgeColor: "bg-green-100 text-green-800"
     },
     {
+      title: "Ayurvedic AI Consultation Website",
+      description: "A comprehensive platform combining ancient Ayurvedic wisdom with modern AI. Features Dosha quiz, AI consultant for personalized advice, herb database, and holistic wellness guidance.",
+      technologies: ["AI", "Web Development", "Healthcare", "Machine Learning"],
+      icon: Leaf,
+      gradient: "from-emerald-500 to-green-600",
+      badgeColor: "bg-emerald-100 text-emerald-800",
+      link: "https://www.linkedin.com/posts/kanhiya-singh-330629358_ayurveda-ai-webdevelopment-activity-7356722052025729025-i5D3",
+      isLarge: true
+    },
+    {
       title: "AI-Enhanced System Call Optimization",
       description: "An advanced AI system that optimizes system calls using machine learning algorithms to improve performance and efficiency.",
       technologies: ["Python", "Machine Learning", "System Optimization"],
@@ -122,6 +132,19 @@ export default function ProjectsSection() {
                       <>
                         <span className="text-gray-400 font-medium">Coming Soon</span>
                         <Clock className="text-gray-400 h-5 w-5" />
+                      </>
+                    ) : project.link ? (
+                      <>
+                        <Button 
+                          variant="ghost"
+                          className="text-blue-600 hover:text-blue-800 font-medium p-0"
+                          onClick={() => window.open(project.link, '_blank')}
+                        >
+                          View Project <ExternalLink className="ml-1 h-4 w-4" />
+                        </Button>
+                        <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
+                          <Github className="h-5 w-5" />
+                        </Button>
                       </>
                     ) : (
                       <>

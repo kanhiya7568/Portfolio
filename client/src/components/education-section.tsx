@@ -157,6 +157,70 @@ export default function EducationSection() {
       status: "Completed",
       color: "purple",
       link: "https://coursera.org/share/8c41c6cc3fc0219ca0c7ba42422f2641"
+    },
+    {
+      title: "Fundamentals of Network Communication",
+      company: "University of Colorado System | Coursera",
+      description: "Core principles of network communication and data transmission",
+      status: "Completed",
+      color: "blue",
+      link: "https://coursera.org/share/51e5abdb37c67c17f56a4b343641205c"
+    },
+    {
+      title: "Software Development Processes and Methodologies",
+      company: "University of Minnesota | Coursera",
+      description: "Comprehensive study of software development lifecycles and methodologies",
+      status: "Completed",
+      color: "green",
+      link: "https://coursera.org/share/c294634436656caed16fdcbac394eb30"
+    },
+    {
+      title: "Using Google Forms for Student Success",
+      company: "Coursera Project Network",
+      description: "Practical application of Google Forms for educational and organizational purposes",
+      status: "Completed",
+      color: "purple",
+      link: "https://coursera.org/share/83b7c64f171b6ea62c7798b5a4fd6de4"
+    },
+    {
+      title: "Foundations of Project Management",
+      company: "Google | Coursera",
+      description: "Professional project management fundamentals and best practices",
+      status: "Completed",
+      color: "blue",
+      link: "https://coursera.org/share/4c097589b75ad2805b9d86d947a886b9"
+    },
+    {
+      title: "Python 101: Develop Your First Python Program",
+      company: "Coursera",
+      description: "Introduction to Python programming and development fundamentals",
+      status: "Completed",
+      color: "green",
+      link: "https://coursera.org/share/252f82fd892318035c7a2065d25c071c"
+    },
+    {
+      title: "Machine Learning for All",
+      company: "University of London | Coursera",
+      description: "Accessible introduction to machine learning concepts and applications",
+      status: "Completed",
+      color: "purple",
+      link: "https://coursera.org/share/7cc655bdab6f71ee20605e20728ff694"
+    },
+    {
+      title: "AWS Multi-Tier VPC Architecture",
+      company: "Coursera Project Network",
+      description: "Hands-on experience with AWS VPC design and multi-tier architecture",
+      status: "Completed",
+      color: "blue",
+      link: "https://coursera.org/share/e06fce578cd2170968148a7bf79e98ac"
+    },
+    {
+      title: "Responsive Web Design",
+      company: "FreeCodeCamp",
+      description: "Complete certification in responsive web design principles and implementation",
+      status: "Completed",
+      color: "green",
+      link: "https://www.freecodecamp.org/certification/fcc73a8f537-e04a-4398-ae93-e6dc0aeb971c/responsive-web-design"
     }
   ];
 
