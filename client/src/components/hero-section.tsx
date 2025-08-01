@@ -27,10 +27,19 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl lg:text-6xl font-light text-gray-800 mb-6 leading-tight">
+            <motion.h1 
+              className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight"
+              style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+            >
+              Kanhiya Solanki
+            </motion.h1>
+            <h2 className="text-3xl lg:text-4xl font-light text-gray-600 mb-6 leading-tight">
               ai-ml<br />
               <span className="font-normal">developer</span>
-            </h1>
+            </h2>
             <div className="space-y-2 text-gray-600">
               <p>AI enthusiast specializing in</p>
               <p>machine learning and intelligent</p>

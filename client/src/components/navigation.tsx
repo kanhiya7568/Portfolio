@@ -44,12 +44,12 @@ export default function Navigation() {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-4">
             {navigationItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className={`transition-all duration-300 cursor-pointer font-medium px-4 py-2 rounded-lg shadow-md hover:shadow-lg ${isScrolled ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`}
+                className={`transition-all duration-300 cursor-pointer font-medium px-4 py-2 rounded-full shadow-md hover:shadow-lg bg-gray-100 hover:bg-gray-200 ${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-gray-700 hover:text-gray-900'}`}
               >
                 {item.label}
               </button>
