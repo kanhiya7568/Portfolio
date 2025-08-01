@@ -86,7 +86,7 @@ export default function AboutSection() {
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Certifications</span>
-                    <span className="font-semibold">3+</span>
+                    <span className="font-semibold">15+</span>
                   </div>
                 </div>
               </div>

@@ -2,11 +2,25 @@
 
 ## Overview
 
-This is a modern personal portfolio website for Kanhiya Solanki, an AI-ML enthusiast and full stack developer. The application showcases his skills, projects, education, and contact information through an interactive, responsive web interface. Built as a full-stack application with React frontend and Express backend, it demonstrates modern web development practices and serves as both a portfolio and a foundation for future enhancements.
+This is a modern personal portfolio website for Kanhiya Solanki, an AI-ML enthusiast and full stack developer. The application showcases his skills, projects, education, and extensive certifications (15+) through an interactive, responsive web interface. Features a stunning mountain landscape background, gradient-styled name presentation, and functional contact form with SendGrid email integration. Built as a full-stack application with React frontend and Express backend, it demonstrates modern web development practices and serves as both a portfolio and a foundation for future enhancements.
+
+## Recent Updates (August 2025)
+- Updated hero section with mountain landscape background and gradient name styling
+- Increased profile photo size and improved layout spacing  
+- Changed navigation to "KS" logo design
+- Added functional contact form with SendGrid email integration
+- Updated GitHub and LinkedIn links to correct profiles
+- Expanded certifications section with 15+ achievements including:
+  - Java Programming, OOP, DSA courses from LPU
+  - Computer Communications Specialization from University of Colorado
+  - Google Networking certifications
+  - Community service and theatre achievements
+- Improved certifications display with scrollable layout and external links
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Portfolio Design: Dark classy background with mountain landscape, vibrant gradient name styling, larger profile photos, minimal spacing, "KS" logo design for navigation.
 
 ## System Architecture
 

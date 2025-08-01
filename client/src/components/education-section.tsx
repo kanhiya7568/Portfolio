@@ -85,6 +85,78 @@ export default function EducationSection() {
       description: "Worked on web applications using HTML, CSS, JavaScript, Node.js and AWS services",
       status: "Completed",
       color: "purple"
+    },
+    {
+      title: "Java Programming Course",
+      company: "Lovely Professional University | 72-hour online course",
+      description: "Comprehensive Java programming course covering core concepts and practical implementation",
+      status: "Completed",
+      color: "blue",
+      link: "https://www.linkedin.com/posts/kanhiya-singh-330629358_certificate-activity-7356251536580087808-t_7A"
+    },
+    {
+      title: "Object Oriented Programming",
+      company: "LPU via iamneo | 72-hour online course",
+      description: "Advanced OOP concepts and implementation techniques",
+      status: "Completed",
+      color: "purple",
+      link: "https://www.linkedin.com/posts/kanhiya-singh-330629358_certificate-activity-7356251265837793280-aBCy"
+    },
+    {
+      title: "Data Structures and Algorithm",
+      company: "Lovely Professional University | 72-hour course",
+      description: "Comprehensive training in data structures and algorithmic problem solving",
+      status: "Completed",
+      color: "green",
+      link: "https://www.linkedin.com/posts/kanhiya-singh-330629358_certificate-activity-7356250916762648577-6PSr"
+    },
+    {
+      title: "Computer Programming",
+      company: "Lovely Professional University | 72-hour online course",
+      description: "Foundation course in computer programming concepts and practices",
+      status: "Completed",
+      color: "blue",
+      link: "https://www.linkedin.com/posts/kanhiya-singh-330629358_successfully-completed-the-72-hour-computer-activity-7356250458065145857--hvn"
+    },
+    {
+      title: "Computer Communications Specialization",
+      company: "University of Colorado System | Coursera",
+      description: "Specialization in computer networking and communication protocols",
+      status: "Completed",
+      color: "purple",
+      link: "https://coursera.org/share/9981f6f22a07aab78d910ccff4e75967"
+    },
+    {
+      title: "Packet Switching Networks and Algorithms",
+      company: "University of Colorado System | Coursera",
+      description: "Advanced study of packet switching technologies and network algorithms",
+      status: "Completed",
+      color: "blue",
+      link: "https://coursera.org/share/321e489c2942e13af89a1754de4287c9"
+    },
+    {
+      title: "TCP/IP and Advanced Topics",
+      company: "University of Colorado System | Coursera",
+      description: "In-depth coverage of TCP/IP protocol suite and advanced networking topics",
+      status: "Completed",
+      color: "green",
+      link: "https://coursera.org/share/8b3c1455634bab284b818f074111074c"
+    },
+    {
+      title: "The Bits and Bytes of Computer Networking",
+      company: "Google | Coursera",
+      description: "Comprehensive networking fundamentals course covering hardware to protocols",
+      status: "Completed",
+      color: "blue",
+      link: "https://coursera.org/share/8333f340d7cdd3cec78ffd07abe665a9"
+    },
+    {
+      title: "Peer-to-Peer Protocols and Local Area Networks",
+      company: "University of Colorado System | Coursera",
+      description: "Specialized course in P2P protocols and LAN technologies",
+      status: "Completed",
+      color: "purple",
+      link: "https://coursera.org/share/8c41c6cc3fc0219ca0c7ba42422f2641"
     }
   ];
 
@@ -183,12 +255,12 @@ export default function EducationSection() {
                 <Award className="mr-3 h-6 w-6 text-blue-600" />
                 Certifications & Achievements
               </h3>
-              <div className="space-y-6 max-h-96 overflow-y-auto pr-2">
+              <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-gray-100">
                 {certifications.map((cert, index) => (
                   <motion.div 
                     key={index}
                     variants={itemVariants}
-                    className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                    className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                   >
                     <div className="flex items-start">
                       <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">

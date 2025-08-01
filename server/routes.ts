@@ -28,10 +28,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Configure SendGrid
       sgMail.setApiKey(sendgridApiKey);
 
-      // Email content
+      // Email content - using a simple verified sender approach
       const emailContent = {
         to: 'kanhiyas135@gmail.com',
-        from: 'noreply@kanhiyasolanki.com', // This should be a verified sender
+        from: 'kanhiyas135@gmail.com', // Use the same email as sender for now
         subject: `Portfolio Contact: Message from ${name}`,
         text: `
 Name: ${name}
