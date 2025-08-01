@@ -72,7 +72,7 @@ export default function HeroSection() {
               
               {/* Secret Name Button */}
               <motion.div
-                className="absolute -bottom-4 left-1/2 transform -translate-x-1/2"
+                className="absolute -bottom-12 left-1/2 transform -translate-x-1/2"
                 initial={{ scale: 1 }}
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -87,16 +87,16 @@ export default function HeroSection() {
                 
                 {/* Hidden Name that appears when robot pushes button */}
                 <motion.div
-                  className="absolute top-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap"
-                  initial={{ opacity: 0, y: -10, scale: 0 }}
-                  animate={{ opacity: 0, y: -10, scale: 0 }}
+                  className="absolute -top-12 left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+                  initial={{ opacity: 0, y: 10, scale: 0 }}
+                  animate={{ opacity: 0, y: 10, scale: 0 }}
                   id="secret-name"
                 >
-                  <div className="bg-gray-800 text-white px-3 py-1 rounded-lg text-sm font-semibold shadow-lg border border-gray-600"
+                  <div className="bg-gray-800 text-white px-4 py-2 rounded-lg text-base font-semibold shadow-xl border border-gray-600"
                        style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
                     Kanhiya Solanki
                   </div>
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45 border-l border-t border-gray-600"></div>
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45 border-r border-b border-gray-600"></div>
                 </motion.div>
               </motion.div>
             </div>
@@ -165,22 +165,24 @@ export default function HeroSection() {
           ease: "linear",
           times: [0, 0.4, 1]
         }}
-        onAnimationComplete={() => {
-          // Trigger name reveal when robot reaches middle
-          setTimeout(() => {
+        onUpdate={(latest) => {
+          // Check robot position and trigger name reveal
+          if (latest.x >= 350 && latest.x <= 450) {
             const nameElement = document.getElementById('secret-name');
-            if (nameElement) {
+            if (nameElement && nameElement.style.opacity !== '1') {
               nameElement.style.opacity = '1';
-              nameElement.style.transform = 'translateX(-50%) translateY(-10px) scale(1)';
+              nameElement.style.transform = 'translateX(-50%) translateY(10px) scale(1)';
               nameElement.style.transition = 'all 0.5s ease-out';
               
-              // Hide name after 3 seconds
+              // Auto-hide name after 2 seconds
               setTimeout(() => {
-                nameElement.style.opacity = '0';
-                nameElement.style.transform = 'translateX(-50%) translateY(-10px) scale(0)';
-              }, 3000);
+                if (nameElement) {
+                  nameElement.style.opacity = '0';
+                  nameElement.style.transform = 'translateX(-50%) translateY(10px) scale(0)';
+                }
+              }, 2000);
             }
-          }, 4800); // Trigger at 40% of animation (when robot reaches middle)
+          }
         }}
       >
         {/* Robot with reflection */}
