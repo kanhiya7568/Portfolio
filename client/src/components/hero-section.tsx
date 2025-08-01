@@ -27,19 +27,10 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
-              className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight"
-              style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-            >
-              Kanhiya Solanki
-            </motion.h1>
-            <h2 className="text-3xl lg:text-4xl font-light text-gray-600 mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-light text-gray-800 mb-6 leading-tight">
               ai-ml<br />
               <span className="font-normal">developer</span>
-            </h2>
+            </h1>
             <div className="space-y-2 text-gray-600">
               <p>AI enthusiast specializing in</p>
               <p>machine learning and intelligent</p>
@@ -78,6 +69,36 @@ export default function HeroSection() {
                 <div className="absolute bottom-16 left-8 w-24 h-12 bg-gradient-to-br from-purple-400/30 to-pink-400/30 rounded-full blur-sm"></div>
                 <div className="absolute bottom-8 right-4 w-12 h-16 bg-gradient-to-br from-green-400/30 to-emerald-400/30 rounded-full blur-sm"></div>
               </div>
+              
+              {/* Secret Name Button */}
+              <motion.div
+                className="absolute -bottom-4 left-1/2 transform -translate-x-1/2"
+                initial={{ scale: 1 }}
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <motion.button
+                  className="w-6 h-6 bg-gray-700 rounded-full border-2 border-gray-600 hover:bg-gray-600 transition-colors duration-300 relative"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gray-600 to-gray-800"></div>
+                </motion.button>
+                
+                {/* Hidden Name that appears when robot pushes button */}
+                <motion.div
+                  className="absolute top-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+                  initial={{ opacity: 0, y: -10, scale: 0 }}
+                  animate={{ opacity: 0, y: -10, scale: 0 }}
+                  id="secret-name"
+                >
+                  <div className="bg-gray-800 text-white px-3 py-1 rounded-lg text-sm font-semibold shadow-lg border border-gray-600"
+                       style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                    Kanhiya Solanki
+                  </div>
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45 border-l border-t border-gray-600"></div>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
           
@@ -88,7 +109,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h1 className="text-5xl lg:text-6xl font-light text-gray-800 mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-light text-gray-800 mb-6 leading-tight">
               &lt;coder&gt;
             </h1>
             <div className="space-y-2 text-gray-600">
@@ -143,6 +164,23 @@ export default function HeroSection() {
           repeat: Infinity,
           ease: "linear",
           times: [0, 0.4, 1]
+        }}
+        onAnimationComplete={() => {
+          // Trigger name reveal when robot reaches middle
+          setTimeout(() => {
+            const nameElement = document.getElementById('secret-name');
+            if (nameElement) {
+              nameElement.style.opacity = '1';
+              nameElement.style.transform = 'translateX(-50%) translateY(-10px) scale(1)';
+              nameElement.style.transition = 'all 0.5s ease-out';
+              
+              // Hide name after 3 seconds
+              setTimeout(() => {
+                nameElement.style.opacity = '0';
+                nameElement.style.transform = 'translateX(-50%) translateY(-10px) scale(0)';
+              }, 3000);
+            }
+          }, 4800); // Trigger at 40% of animation (when robot reaches middle)
         }}
       >
         {/* Robot with reflection */}
