@@ -25,6 +25,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
+      // Log the email attempt for debugging
+      console.log(`📧 Attempting to send email from contact form:`);
+      console.log(`   From: ${name} <${email}>`);
+      console.log(`   To: kanhiyas135@gmail.com`);
+      console.log(`   Subject: Portfolio Contact: Message from ${name}`);
+      console.log(`   Message: ${message.substring(0, 100)}...`);
+
       // Configure SendGrid
       sgMail.setApiKey(sendgridApiKey);
 
@@ -50,12 +57,23 @@ ${message}
         replyTo: email,
       };
 
-      await sgMail.send(emailContent);
+      const result = await sgMail.send(emailContent);
+      console.log('SendGrid response:', result[0].statusCode, result[0].headers);
       
       res.status(200).json({ message: 'Message sent successfully!' });
     } catch (error) {
       console.error('Error sending email:', error);
-      res.status(500).json({ error: 'Failed to send message' });
+      
+      // More detailed error logging
+      if (error.response) {
+        console.error('SendGrid error body:', error.response.body);
+        console.error('SendGrid error status:', error.response.status);
+      }
+      
+      res.status(500).json({ 
+        error: 'Failed to send message',
+        details: error.message 
+      });
     }
   });
 
